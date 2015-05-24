@@ -1,0 +1,109 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Sistemas Embebidos II</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		
+		<!-- FontAwesome - http://fortawesome.github.io/Font-Awesome/ -->
+        <link rel="stylesheet" href="css/font-awesome.min.css" />
+
+		<!-- jQueryMobileCSS - original without styling -->
+        <link rel="stylesheet" href="css/jquerymobile.css" />
+
+		<!-- nativeDroid core CSS -->
+        <link rel="stylesheet" href="css/jquerymobile.nativedroid.css" />
+
+		<!-- nativeDroid: Light/Dark -->
+        <link rel="stylesheet" href="css/jquerymobile.nativedroid.dark.css"  id='jQMnDTheme' />
+
+		<!-- nativeDroid: Color Schemes -->
+        <link rel="stylesheet" href="css/jquerymobile.nativedroid.color.blue.css" id='jQMnDColor' />
+
+		<!-- jQuery / jQueryMobile Scripts -->
+		<script src="js/jquery-1.9.1.min.js"></script>
+        <script src="js/jquery.mobile-1.3.1.min.js"></script>
+           
+
+    </head>
+    <body>
+        
+    <div data-role="page" data-theme='b'>
+
+
+        <div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme='b'>
+            <a href="index.html" data-ajax="false"><i class='icon-ellipsis-vertical'></i></a>
+            <h1>Reportes</h1>
+            <!--Agregar primero uno con btoones de cada reporte o un combo y luego cada uno se redirecciona al html o un html para todos para generarse  -->
+        </div>
+        
+        <div data-role="content">   
+
+
+        <div class='inset'>
+  
+            <table data-role="table" id="table-column-toggle" data-mode="columntoggle" class="ui-responsive table-stroke">
+              <thead>
+                <tr>
+                  <th data-priority="2">Rank</th>
+                  <th>Platillo</th>
+                  <th data-priority="3">Puntaje</th>
+                  <th data-priority="1"><abbr title="Rotten Tomato Rating">Rating</abbr></th>
+                  <th data-priority="5">Votantes</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>1</th>
+                  <td><a  data-rel="external">Omelet al Gusto</a></td>
+                  <td>259</td>
+                  <td>100%</td>
+                  <td>74</td>
+                </tr>
+                <tr>
+                  <th>2</th>
+                  <td>Bistek</td>
+                  <td>230</td>
+                  <td>94%</td>
+                  <td>64</td>
+                </tr>
+                <tr>
+                  <th>3</th>
+                  <td><a data-rel="external">Enchiladas de Pollo</a></td>
+                  <td>209</td>
+                  <td>88%</td>
+                  <td>87</td>
+                </tr>
+                <tr>
+                  <th>4</th>
+                  <td><a  data-rel="external">Frittata de Claras con vegetales</a></td>
+                  <td>188</td>
+                  <td>87%</td>
+                  <td>87</td>
+                </tr>
+                <tr>
+                  <th>5</th>
+                  <td><a  data-rel="external">Croissant, Bagel o Pan Integral</a></td>
+                  <td>167</td>
+                  <td>85%</td>
+                  <td>87</td>
+                </tr>
+                <tr>
+                  <th>6</th>
+                  <td><a data-rel="external">Sandwich de Espinacas</a></td>
+                  <td>141</td>
+                  <td>80%</td>
+                  <td>74</td>
+                </tr>
+                
+              </tbody>
+            </table>
+        </div>
+        <hr />
+        
+	        
+        </div>
+
+    </div>
+    
+    </body>
+</html>

@@ -5,7 +5,7 @@
   "AppIdentifier": "com.telerik.DemoCdis",
   "DisplayName": "DemoCdis",
   "Author": "",
-  "Description": "",
+  "Description": "DemoCdis",
   "BundleVersion": "1.0",
   "AndroidVersionCode": "1",
   "iOSDeviceFamily": [
@@ -41,5 +41,8 @@
     "ID_RESOLUTION_WVGA",
     "ID_RESOLUTION_WXGA",
     "ID_RESOLUTION_HD720P"
+  ],
+  "CorePlugins": [
+    "com.phonegap.plugins.barcodescanner@1.2.9"
   ]
 }

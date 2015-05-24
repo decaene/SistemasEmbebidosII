@@ -1,0 +1,141 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>nativeDroid - Theme for jQuery Mobile</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    
+    <!-- FontAwesome - http://fortawesome.github.io/Font-Awesome/ -->
+        <link rel="stylesheet" href="css/font-awesome.min.css" />
+
+    <!-- jQueryMobileCSS - original without styling -->
+        <link rel="stylesheet" href="css/jquerymobile.css" />
+
+    <!-- nativeDroid core CSS -->
+        <link rel="stylesheet" href="css/jquerymobile.nativedroid.css" />
+
+    <!-- nativeDroid: Light/Dark -->
+        <link rel="stylesheet" href="css/jquerymobile.nativedroid.dark.css"  id='jQMnDTheme' />
+
+    <!-- nativeDroid: Color Schemes -->
+        <link rel="stylesheet" href="css/jquerymobile.nativedroid.color.blue.css" id='jQMnDColor' />
+
+    <!-- jQuery / jQueryMobile Scripts -->
+    <script src="js/jquery-1.9.1.min.js"></script>
+        <script src="js/jquery.mobile-1.3.1.min.js"></script>
+        <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/conexionPantalla.js"></script>
+    
+             <!-- Base de Datos -->
+        <script src="js/bd.js"></script>
+        
+    </head>
+    <body onload="onLoad()">
+         <script type="text/javascript">
+          showName();
+          LoadProveedoresSalida();
+          LoadProveedoresFacturas();
+          LoadProveedoresPendientes();             
+             
+        </script>
+        
+    <div data-role="page" data-theme='b'>
+
+
+        <div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme='b'>
+            <a href="menuPrincipal.html" data-ajax="false"><i class='icon-ellipsis-vertical'></i></a>
+            <h1>Estatus del Dia</h1>
+        </div>
+        
+        <div data-role="content">   
+            <ul data-role="listview" data-inset="false" data-icon="false" data-divider-theme="b">
+                 <input type="text" id="bodega" disabled>
+                <input type="text" id="internet" disabled>
+            </ul>
+       <!-- <input type="button" id="btnValid" onclick="LoadProveedoresPendientes()" value="Cargar Reporte Diario"><br>-->
+      <div data-role="collapsible" data-content-theme="b">
+            
+            <h4>Reporte: <strong>Citas de Hoy</strong></h4>
+            <ul data-role="listview">
+                <div data-role="collapsible" data-content-theme="b">
+            <h4>En Rampa</h4>
+      <div class='inset'>
+         <table data-role="table" id="table-column-toggle" data-mode="columntoggle2" class="ui-responsive table-stroke">
+              <thead>
+                <tr>
+                  <th data-priority="2"><font color=#58FAF4 bold>Cita</font></th>
+                  <th><font color=#58FAF4 bold>Rampa</font></th>
+                  <th data-priority="3"><font color=#58FAF4 bold>Proveedor</font></th>
+                  <th data-priority="1"><font color=#58FAF4 bold>Hora</font></th>
+   
+                </tr>
+              </thead>
+              <tbody id="tablaPPendientes">
+                
+                
+              </tbody>
+            </table>
+      </div>
+                    
+        </div>
+
+            </ul>
+            <ul data-role="listview">
+                <div data-role="collapsible" data-content-theme="b">
+            <h4>Entrada de Facturas</h4>
+      <div class='inset'>
+        <table data-role="table" id="table-column-toggle" data-mode="columntoggle2" class="ui-responsive table-stroke">
+              <thead>
+                <tr>
+                  <th data-priority="2"><font color=#58FAF4 bold>Cita</font></th>
+                  <th><font color=#58FAF4 bold>Rampa</font></th>
+                  <th data-priority="3"><font color=#58FAF4 bold>Proveedor</font></th>
+                  <th data-priority="1"><font color=#58FAF4 bold>Hora</font></th>
+   
+                </tr>
+              </thead>
+              <tbody id="tablaPFacturas">
+                
+                
+              </tbody>
+            </table>
+      </div>
+                    
+        </div>
+
+            </ul>
+            <ul data-role="listview">
+                <div data-role="collapsible" data-content-theme="b">
+            <h4>Salida de Proveedor </h4>
+      <div class='inset'>
+         <table data-role="table" id="table-column-toggle" data-mode="columntoggle2" class="ui-responsive table-stroke">
+              <thead>
+                <tr>
+                  <th data-priority="2"><font color=#58FAF4 bold>Cita</font></th>
+                  <th><font color=#58FAF4 bold>Rampa</font></th>
+                  <th data-priority="3"><font color=#58FAF4 bold>Proveedor</font></th>
+                  <th data-priority="1"><font color=#58FAF4 bold>Hora</font></th>
+   
+                </tr>
+              </thead>
+              <tbody id="tablaPSalida">
+                
+                
+              </tbody>
+            </table>
+      </div>
+                    
+        </div>
+
+            </ul>
+        </div>
+
+      
+
+          
+          
+        </div>
+
+    </div>
+    
+    </body>
+</html>

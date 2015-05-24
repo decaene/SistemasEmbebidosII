@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Sistemas Embebidos II</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		
+		<!-- FontAwesome - http://fortawesome.github.io/Font-Awesome/ -->
+        <link rel="stylesheet" href="css/font-awesome.min.css" />
+
+		<!-- jQueryMobileCSS - original without styling -->
+        <link rel="stylesheet" href="css/jquerymobile.css" />
+
+		<!-- nativeDroid core CSS -->
+        <link rel="stylesheet" href="css/jquerymobile.nativedroid.css" />
+
+		<!-- nativeDroid: Light/Dark -->
+        <link rel="stylesheet" href="css/jquerymobile.nativedroid.dark.css"  id='jQMnDTheme' />
+
+		<!-- nativeDroid: Color Schemes -->
+        <link rel="stylesheet" href="css/jquerymobile.nativedroid.color.blue.css" id='jQMnDColor' />
+
+		<!-- jQuery / jQueryMobile Scripts -->
+		<script src="js/jquery-1.9.1.min.js"></script>
+        <script src="js/jquery.mobile-1.3.1.min.js"></script>
+
+
+    </head>
+    <body>
+        
+    <div data-role="page" data-theme='b'>
+
+	<div data-role="panel" id="mypanel" data-theme="b">
+        <ul data-role="listview">
+            <li data-role="list-divider">Revisa nuestro men&uacute;!</li>
+            <li data-icon="coffee"><a href="desayunos.html">Desayunos</a></li>
+            <li data-icon="group"><a href="#">Comidas</a></li>
+            <li data-icon="beer"><a href="#">Bebidas</a></li>
+            <li data-icon="apple"><a href="#">Fruta</a></li>
+            <li data-icon="certificate"><a href="#">Postres</a></li>
+        </ul>
+    </div>
+        <div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme='b'>
+            <a href="index.html" data-ajax="false"><i class='icon-ellipsis-vertical'></i></a>
+            <h1>Men&uacute;</h1>
+        </div>
+        
+        <div data-role="content">   
+		
+	        <div class='inset'>
+	            
+	            <a href="#mypanel" data-role='button' data-icon='tasks' data-iconpos='left' data-inline='true'>Ver Men&uacute;</a>
+                <h2>Ofrecemos una variedad de desayunos, comidas, bebidas, postres!</h2>
+                
+				<h3><a href="#">Tu opini&oacute;n es importante, ayudanos a mejorar!</a></h3>
+                <h4 ><strong>Comentarios</strong></h4>
+                <h4 ><a href="#">044 + 7273747574</a></h4>
+                <h4 ><a href="#">www.aplicacionrestaurante.demo</a></h4>
+	        </div>
+	        
+        </div>
+
+    </div>
+    
+    </body>
+</html>

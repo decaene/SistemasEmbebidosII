@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>nativeDroid - Theme for jQuery Mobile</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		
+		<!-- FontAwesome - http://fortawesome.github.io/Font-Awesome/ -->
+        <link rel="stylesheet" href="css/font-awesome.min.css" />
+
+		<!-- jQueryMobileCSS - original without styling -->
+        <link rel="stylesheet" href="css/jquerymobile.css" />
+
+		<!-- nativeDroid core CSS -->
+        <link rel="stylesheet" href="css/jquerymobile.nativedroid.css" />
+
+		<!-- nativeDroid: Light/Dark -->
+        <link rel="stylesheet" href="css/jquerymobile.nativedroid.dark.css"  id='jQMnDTheme' />
+
+		<!-- nativeDroid: Color Schemes -->
+        <link rel="stylesheet" href="css/jquerymobile.nativedroid.color.blue.css" id='jQMnDColor' />
+
+		<!-- jQuery / jQueryMobile Scripts -->
+		<script src="js/jquery-1.9.1.min.js"></script>
+        <script src="js/jquery.mobile-1.3.1.min.js"></script>
+        <script src="js/basededatos.js"></script>
+
+
+
+    </head>
+    <body onload="onBodyLoad()" >
+        
+    <div data-role="page" data-theme='b'>
+
+        
+        <script type="text/javascript" charset="utf-8">
+            
+          var db;
+        var shortName = 'WebSqlDB3';
+        var version = '1.0';
+        var displayName = 'WebSqlDB3';
+        var maxSize = 65535;
+            db = openDatabase(shortName, version, displayName,maxSize);
+              db.transaction(function(transaction) {
+           transaction.executeSql('SELECT * FROM Categorias;', [], function(transaction, result) {
+              if (result != null && result.rows != null) {
+                for (var i = 0; i < result.rows.length; i++) {
+                  var row = result.rows.item(i);
+           $('#contentListViewDetalle').append('<div data-role="collapsible" data-content-theme="b" id="collapsibleid" class="ui-collapsible ui-collapsible-inset ui-corner-all ui-collapsible-themed-content ui-collapsible-collapsed"><h4 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-fullsize ui-btn-icon-left ui-btn-up-b" data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="span" data-icon="plus" data-iconpos="left" data-theme="b" data-mini="false"><span class="ui-btn-inner"><span class="ui-btn-text">'+row.Descripcion+'<span class="ui-collapsible-heading-status"> click to expand contents</span></span><span class="ui-icon ui-icon-plus ui-icon-shadow">&nbsp;</span></span></a></h4><div class="ui-collapsible-content ui-body-b ui-collapsible-content-collapsed" aria-hidden="true">'+
+            '<ul data-role="listview" class="ui-listview">'+
+                
+            '</ul>'+
+            '</div></div>');
+        }
+      }
+      
+     },errorHandler);
+ },errorHandler,nullHandler);    
+        
+            
+            
+        </script>
+        
+        
+        
+        <div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme='b'>
+            <a href="index.html" data-ajax="false"><i class='icon-ellipsis-vertical'></i></a>
+            <h1>Alcance Diario</h1>
+        </div>
+        
+        <div data-role="content" >   
+
+            <ul data-role="listview" data-inset="true" id="contentListViewDetalle">
+             
+            </ul>
+
+  
+            
+            
+            
+            
+       
+        
+       
+
+    </div>
+    
+    </div></body>
+</html>

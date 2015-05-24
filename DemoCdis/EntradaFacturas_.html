@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Barcode Scanner</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta charset="utf-8">
+    <!-- FontAwesome - http://fortawesome.github.io/Font-Awesome/ -->
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <!-- jQueryMobileCSS - original without styling -->
+    <link rel="stylesheet" href="css/jquerymobile.css" />
+    <!-- nativeDroid core CSS -->
+    <link rel="stylesheet" href="css/jquerymobile.nativedroid.css" />
+    <!-- nativeDroid: Light/Dark -->
+    <link rel="stylesheet" href="css/jquerymobile.nativedroid.dark.css" id='jQMnDTheme' />
+    <!-- nativeDroid: Color Schemes -->
+    <link rel="stylesheet" href="css/jquerymobile.nativedroid.color.blue.css" id='jQMnDColor' />
+    <!-- jQuery / jQueryMobile Scripts -->
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" charset="utf-8" src="scripts/main.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/jquery.min.js"></script>
+    <!-- Base de Datos -->
+    <script src="js/bdd.js"></script>
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/jquery.mobile-1.3.1.min.js"></script>
+    <link rel="stylesheet" href="jquery.mobile-1.1.0.min.css" />
+    <script type="text/javascript">
+        function a() {
+
+            if (e() == true) {
+               LoadFacturas();
+                $("#popupDialog").popup("close");
+                // alert("Registros Actualizados");
+                //setTimeout("location.href='EntradaFacturas.html'", 5);
+            }
+            //setTimeout(function(){ $( ".selector" ).popup( "close" );},0);
+            //setTimeout("location.href='EntradaFacturas.html'", 5);
+        }
+
+
+        $(document).on('click', '#Close', function () {
+            setTimeout(function () {
+                $("#popupDialog").popup("close");
+            }, 1);
+        });    
+
+    </script>
+    <script type="text/javascript" charset="utf-8" src="js/conexionPantalla.js"></script>
+</head>
+<body onload="onBodyLoad(), onLoad()">
+    <script type="text/javascript">
+        showName();
+    </script>
+    <div data-role="page" data-theme='b'>
+        <div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme='b'>
+            <a href="menuPrincipal.html" data-ajax="false"><i class='icon-ellipsis-vertical'></i>
+            </a>
+            <h1>
+                Entrada de Facturas</h1>
+        </div>
+        <div data-role="content">
+            <ul data-role="listview" data-inset="false" data-icon="false" data-divider-theme="b">
+                <input type="text" id="bodega" disabled>
+                <input type="text" id="internet" disabled>
+            </ul>
+            <div class='inset'>
+                <p>
+                    &nbsp;</p>
+                <h3>
+                    Escanea el c&oacute;digo de barras</h3>
+                <progress value='1'></progress>
+                <button id="scanButton">
+                    <strong>Click para escanear cita</strong></button>
+                <progress value='1'></progress>
+                <p>
+                    &nbsp;</p>
+                <label>
+                    <strong>Folio de Cita:</strong></label>
+               <input type="text" id="txRecibeFolio" placeholder="Se puede introducir el folio manual.."><input type="button" onclick="BuscaIdCita()" value="Cargar"><br>
+                <!--<input type="button" onclick="e()" value="Filas"><br>-->
+                <!--  <label><strong>Proveedor:</strong></label>
+            <ul data-role="listview" data-filter="true" data-filter-reveal="true" data-filter-placeholder="Proveedor" data-filter-theme="b">
+        <li data-role='list-divider'>Proveedores</li>
+        <li><a  title="Ropa">Proveedor de Ropa</a></li>
+        <li><a  title="Muebles">Proveedor de Muebles</a></li>
+        <li><a  title="Zapatos">Proveedor de Zapatos</a></li>
+          </ul>-->
+                <input type="text" id="provedor" disabled>
+                <li data-role="fieldcontain">
+                    <label for="lblpro">
+                        Folios de Facturas Incluidas en la cita::</label>
+                </li>
+                <table data-role="table" id="table-column-toggle" data-inset="true" data-mode="columntoggle"
+                    class="ui-responsive table-stroke">
+                    <thead>
+                        <tr>
+                            <th data-priority="1">
+                                Estatus
+                            </th>
+                            <th>
+                                Nombre
+                            </th>
+                            <th data-priority="3">
+                                <abbr title="Rotten Tomato Rating">
+                                    Descripcion</abbr>
+                            </th>
+                            <th data-priority="4">
+                                TPMS
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablaFacturasCita">
+                    </tbody>
+                </table>
+                <form>
+                <a href="#popupDialog" id="Confirmar" data-rel="popup" data-position-to="window" data-role="button"
+                    data-inline="true" data-transition="pop" data-icon="external-link">Confirmar</a>
+                </form>
+                <div data-role="popup" id="popupDialog" data-theme="b">
+                    <div data-role="header" data-theme="b">
+                        <h1>
+                            Atenci&oacute;n</h1>
+                    </div>
+                    <div data-role="content" data-theme="b">
+                        <code>Dar entrada a facturas?</code>
+                        <div class='showastabs center nobg'>
+                            <a href="#" data-ajax="false" data-icon="ok" data-iconpos="left" data-role="button"
+                                data-inline="true" onclick="a()">Aceptar</a> <a href="#" id="Close" data-ajax="false"
+                                    data-icon="delete" data-iconpos="left" data-role="button" data-inline="true">Cancelar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div data-role="page">
+                <div data-role="main" class="ui-content">
+                    <div data-role="popup" id="popupTomaFoto" data-theme="b" data-content-theme="a" data-position-to="window"
+                        data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d">
+                        <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">
+                        </a>
+                        <ul data-role="listview" data-inset="true" data-filter="true">
+                             <table data-role="table" id="tablepopup" data-inset="true" class="ui-responsive table-stroke">
+              <thead>
+                <tr>
+                  <th data-priority="1">IdProducto</th>
+                  <th data-priority="2">Nombre</th>
+                  <th data-priority="3">Cantidad</th>
+                  <th data-priority="4">IdFactura</th>
+                  <th data-priority="5">Fotograf&iacute;a</th>
+                </tr>
+              </thead>
+              <tbody id="tablaDetalle">
+               
+              </tbody>
+            </table>
+         
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+</html>

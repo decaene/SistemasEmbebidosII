@@ -1,0 +1,100 @@
+
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Registrar Usuario</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		
+		<!-- FontAwesome - http://fortawesome.github.io/Font-Awesome/ -->
+        <link rel="stylesheet" href="css/font-awesome.min.css" />
+
+		<!-- jQueryMobileCSS - original without styling -->
+        <link rel="stylesheet" href="css/jquerymobile.css" />
+
+		<!-- nativeDroid core CSS -->
+        <link rel="stylesheet" href="css/jquerymobile.nativedroid.css" />
+
+		<!-- nativeDroid: Light/Dark -->
+        <link rel="stylesheet" href="css/jquerymobile.nativedroid.dark.css"  id='jQMnDTheme' />
+
+		<!-- nativeDroid: Color Schemes -->
+        <link rel="stylesheet" href="css/jquerymobile.nativedroid.color.blue.css" id='jQMnDColor' />
+
+		<!-- jQuery / jQueryMobile Scripts -->
+		<script src="js/jquery-1.9.1.min.js"></script>
+        <script src="js/jquery.mobile-1.3.1.min.js"></script>
+        
+         <!-- Base de Datos -->
+        <script src="js/bd.js"></script>
+        
+        <script type="text/javascript">
+          onBodyLoad();
+          LoadComboBill();
+          LoadComboappointment();
+        </script>
+
+
+    </head>
+    <body>
+        
+    <div data-role="page" data-theme='b'>
+
+
+        <div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme='b'>
+            <a href="menuPrincipal.html" data-ajax="false"><i class='icon-ellipsis-vertical'></i></a>
+            <h1>Registrar Factura</h1>
+        </div>
+        
+        <div data-role="content">   
+
+			    
+            <form>
+                <ul data-role="listview" data-inset="true">
+        
+                    
+                    <li data-role="fieldcontain">
+                        <label for="name2b">Factura:</label>
+                        <input type="text" name="name2" id="txtfac" value="" data-clear-btn="true" placeholder="Ingresa nombre de Factura...">
+                    </li>
+                    
+                    <li data-role="fieldcontain">
+                        <label for="select-choice-1b" class="select">Cita:</label>
+                        <select name="select-choice-1" id="cbocit" data-native-menu="true">
+                         <option value="0">Seleccionar...</option>
+                 
+                        </select>
+                    </li>
+
+                      <li data-role="fieldcontain">
+                        <label for="name2b">TMPS:</label>
+                        <input type="text" name="name2" id="txttpm" value="" data-clear-btn="true" placeholder="Ingresa numero de TMPS...">
+                    </li>
+
+
+                     <li data-role="fieldcontain">
+                        <label for="select-choice-1b" class="select">Estatus</label>
+                        <select name="select-choice-1" id="cboest" data-native-menu="true">
+                         <option value="0">Seleccionar...</option>
+                 
+                        </select>
+                    </li>
+                    
+                   
+                    <li>
+                        <fieldset class="ui-grid-a">
+                                <div class="ui-block-a"><a onclick="window.location.href='menuPrincipal.html'"><button type="submit" data-theme="b">Cancelar</button></a></div>
+                                <div class="ui-block-b"><button type="submit" data-theme="b" onclick="AddBill()">Guardar</button></div>
+                        </fieldset>
+                    </li>
+                </ul>
+            </form>
+	       
+  
+	       
+	        
+        </div>
+
+    </div>
+    
+    </body>
+</html>

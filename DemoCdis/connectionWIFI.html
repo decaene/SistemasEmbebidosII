@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Online Example</title>
+      
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    
+      
+      <script type="text/javascript" charset="utf-8">
+    
+    // Wait for device API libraries to load
+    //
+    function onLoad() {
+        document.addEventListener("online", onOnline, false);
+        document.addEventListener("deviceready", onDeviceReady, false);
+        document.addEventListener("offline", onOffline, false);
+    }
+
+    // device APIs are available
+    //
+    function onDeviceReady() {
+        
+    }
+
+    // Handle the online event
+    //
+    function onOnline() {
+        alert('Online')
+    }
+          
+    // Handle the offline event
+    //
+    function onOffline() {
+        alert('Offline')
+    }
+
+    </script>
+      
+      
+      
+      
+  </head>
+  <body onload="onLoad()">
+      
+   
+        
+      
+  </body>
+</html>

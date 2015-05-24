@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>nativeDroid - Theme for jQuery Mobile</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		
+		<!-- FontAwesome - http://fortawesome.github.io/Font-Awesome/ -->
+        <link rel="stylesheet" href="css/font-awesome.min.css" />
+
+		<!-- jQueryMobileCSS - original without styling -->
+        <link rel="stylesheet" href="css/jquerymobile.css" />
+
+		<!-- nativeDroid core CSS -->
+        <link rel="stylesheet" href="css/jquerymobile.nativedroid.css" />
+
+		<!-- nativeDroid: Light/Dark -->
+        <link rel="stylesheet" href="css/jquerymobile.nativedroid.dark.css"  id='jQMnDTheme' />
+
+		<!-- nativeDroid: Color Schemes -->
+        <link rel="stylesheet" href="css/jquerymobile.nativedroid.color.green.css" id='jQMnDColor' />
+        
+        <script type="text/javascript" charset="utf-8" src="js/basededatos.js"></script> <!--base de datos-->
+
+		<!-- jQuery / jQueryMobile Scripts -->
+		<script src="js/jquery-1.9.1.min.js"></script>
+        <script src="js/jquery.mobile-1.3.1.min.js"></script>
+        
+        <script type="text/javascript">
+          refrescarcategoria();
+        </script>
+       
+    </head>
+    <body onload="onBodyLoad()">>    
+    <div data-role="page" data-theme='b'>
+        <div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme='b'>
+            <a href="index.html" data-ajax="false"><i class='icon-ellipsis-vertical'></i></a>
+            <h1>Agregar Producto</h1>
+        </div>
+
+      
+
+
+        <div data-role="content">   
+      
+          
+               <form>
+                    
+                     
+                    <li data-role="fieldcontain">
+                        <label for="phone">Categoria:</label>
+                        <input type="email" name="inputephone" id="txtcat" value="" data-clear-btn="true" placeholder="Ingresa del 1 al 6">
+                    </li>
+                    <li data-role="fieldcontain">
+                        <label for="phone">Producto:</label>
+                        <input type="email" name="inputephone" id="txtdes" value="" data-clear-btn="true" placeholder="Nombre del Producto">
+                    </li>
+                   <li data-role="fieldcontain">
+                        <label for="phone">Fecha:</label>
+                        <input type="email" name="inputephone" id="txtfec" value="" data-clear-btn="true" placeholder="">
+                    </li>
+                    <li data-role="fieldcontain">
+                        <label for="phone">Proveedor:</label>
+                        <input type="email" name="inputephone" id="txtpro" value="" data-clear-btn="true" placeholder="">
+                    </li>
+                    <li data-role="fieldcontain">
+                        <label for="phone">Status:</label>
+                         <input type="email" name="inputephone" id="txtsta" value="" data-clear-btn="true" placeholder="Puede ser 1 o 0">
+                    </li>
+
+                           
+                 
+            </form>
+
+          <form>
+          <input type="button" value="Agregar" onclick="agregarProducto()"  />
+       </form>
+
+       <FORM>
+<INPUT TYPE="button" value="Regresar" onClick="parent.location='collapsible.html'">
+</FORM>
+        </div>
+    </div>
+
+
+
+    </body>
+</html>
